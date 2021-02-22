@@ -14,14 +14,15 @@
     <div x-data="{
         isOpen: true,
         selectedIndex: -1,
-        selectUp(component) {
+        optionsValues:@entangle('optionsValues'),
+        selectUp() {
             if (this.selectedIndex === 0) {
                 return
             }
             this.selectedIndex--
         },
-        selectDown(component) {
-            if (component.data.optionsValues.length - 1 === this.selectedIndex) {
+        selectDown() {
+            if (this.optionsValues.length - 1 === this.selectedIndex) {
                 return
             }
             this.selectedIndex++
@@ -30,16 +31,16 @@
             this.selectedIndex = index
             this.isOpen = true
         },
-        confirmSelection(component) {
-            const value = component.data.optionsValues.length === 1
-                ? component.data.optionsValues[0]
-                : component.data.optionsValues[this.selectedIndex]
+        confirmSelection() {
+            const value = this.optionsValues.length === 1
+                ? this.optionsValues[0]
+                : this.optionsValues[this.selectedIndex]
 
             if (!value) {
                 return
             }
 
-            component.set('value', value)
+            @this.set('value', value)
 
             this.selectedIndex = -1
             this.isOpen = true

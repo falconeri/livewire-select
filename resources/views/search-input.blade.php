@@ -10,7 +10,7 @@
     x-on:click="isOpen = true"
     x-on:keydown="isOpen = true"
 
-    x-on:keydown.arrow-up="selectUp(@this)"
-    x-on:keydown.arrow-down="selectDown(@this)"
-    x-on:keydown.enter.prevent="confirmSelection(@this)"
+    x-on:keydown.arrow-up="selectUp()"
+    x-on:keydown.arrow-down="selectDown()"
+    x-on:keydown.enter.prevent="confirmSelection()"
 />
