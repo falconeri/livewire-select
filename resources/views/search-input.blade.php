@@ -13,4 +13,5 @@
     x-on:keydown.arrow-up="selectUp()"
     x-on:keydown.arrow-down="selectDown()"
     x-on:keydown.enter.prevent="confirmSelection()"
+    autocomplete="off"
 />
